@@ -65,8 +65,31 @@ export const Letter= () => {
                         }
                 </select><br><br>
             </div>
-        <button class="button" id="submitRequest">Submit Request</button>
+        <button class="button" id="submitLetter">Submit Letter</button>
     ` 
 
     return html
 }
+
+const mainContainer = document.querySelector("#container")
+
+    mainContainer.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id === "submitRequest") {
+            // Get what the user typed into the form fields
+            const userWriter = document.querySelector("option[name='faveWriter']").value
+            const userNote = document.querySelector("input[name='faveNote']").value
+            const userTopic = document.querySelector("input[name='faveTopic']").value
+            const userReader = document.querySelector("input[name='faveReader']").value
+
+            // Make an object out of the user input
+            const dataToSendToAPI = {
+                description: userWriter,
+                address: userNote,
+                budget: userTopic,
+                neededBy: userReader 
+            }
+
+            // Send the data to the API for permanent storage
+            sendRequest(dataToSendToAPI)
+        }
+    })

@@ -2,19 +2,23 @@
     "pals": [
         {
             "id": 1,
-            "name": "Janelle Monáe"
+            "name": "Tomi Adeyemi",
+            "email": "tomi.adeyemi@pps.com"
         },
         {
             "id": 2,
-            "name": "Tessa Thompson"
+            "name": "Laureate Amanda Gorman",
+            "email": "laureate-amanda.gorman@pps.com"
         },
         {
             "id": 3,
-            "name": "Frank Ocean"
+            "name": "Issa Rae",
+            "email": "issa.rae@pps.com"
         },
         {
             "id": 4,
-            "name": "Keiynan Lonsdale"
+            "name": "Ava DuVernay",
+            "email": "ava.duVernay@pps.com"
         }
     ],
     "topics": [
@@ -41,10 +45,10 @@
     ],
     "submissions": [{
         "id": 1,
-        "writter": "Keiynan Lonsdale",
-        "reader": "Tessa Thompson",
-        "subject": "friendly",
-        "note": "Loved you in Passing!"
+        "writter": "Ava DuVernay",
+        "reader": "Issa Rae",
+        "subject": "congragulations",
+        "note": "Insecure's season finale was amazing!"
       }
     ]
 }
