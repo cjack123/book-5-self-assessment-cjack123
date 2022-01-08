@@ -1,0 +1,50 @@
+{
+    "pals": [
+        {
+            "id": 1,
+            "name": "Janelle Monáe"
+        },
+        {
+            "id": 2,
+            "name": "Tessa Thompson"
+        },
+        {
+            "id": 3,
+            "name": "Frank Ocean"
+        },
+        {
+            "id": 4,
+            "name": "Keiynan Lonsdale"
+        }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "name": "business"
+        },
+        {
+            "id": 2,
+            "name": "friendly"
+        },
+        {
+            "id": 3,
+            "name": "family"
+        },
+        {
+            "id": 4,
+            "name": "congragulations"
+        },
+        {
+            "id": 4,
+            "name": "condolences"
+        }
+    ],
+    "submissions": [{
+        "id": 1,
+        "writter": "Keiynan Lonsdale",
+        "reader": "Tessa Thompson",
+        "subject": "friendly",
+        "note": "Loved you in Passing!"
+      }
+    ]
+}
