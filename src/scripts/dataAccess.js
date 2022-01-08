@@ -24,19 +24,19 @@ const applicationState = {
     ],
     pals: [{
         id: 1,
-        name: "Janelle Monáe"
+        name: "Tomi Adeyemi"
       },
      {
         id: 2,
-        name: "Tessa Thompson"
+        name: "George R. R. Martin"
       },
       {
         id: 3,
-        name: "Frank Ocean"
+        name: "Emily Dickinson"
       },
       {
         id: 4,
-        name: "Keiynan Lonsdale"
+        name: "Laureate Amanda Gorman"
       }
     ]
 }
