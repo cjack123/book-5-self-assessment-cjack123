@@ -1,6 +1,6 @@
 import { PenPal  } from "./PenPal.js"
-
-
+import { fetchPals  } from "./dataAccess.js"
+import { fetchTopics  } from "./dataAccess.js"
 
 
 
@@ -16,8 +16,20 @@ mainContainer.addEventListener(
 
 
 const render = () => {
+    fetchPals().then(
+        () => {
             mainContainer.innerHTML = PenPal()
+        }
+    )
 
+    fetchTopics().then(
+        () => {
+            mainContainer.innerHTML = PenPal()
+        }
+    )
 }
 
 render()
+
+
+//add fetchletter

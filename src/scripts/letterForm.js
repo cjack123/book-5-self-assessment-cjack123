@@ -1,4 +1,5 @@
 import { getPals } from "./dataAccess.js"
+// import { fetchPals } from "./dataAccess.js"
 import { getTopics } from "./dataAccess.js"
 
 
@@ -71,25 +72,39 @@ export const Letter= () => {
     return html
 }
 
-const mainContainer = document.querySelector("#container")
+// const mainContainer = document.querySelector("#container")
 
-    mainContainer.addEventListener("click", clickEvent => {
-        if (clickEvent.target.id === "submitRequest") {
-            // Get what the user typed into the form fields
-            const userWriter = document.querySelector("option[name='faveWriter']").value
-            const userNote = document.querySelector("input[name='faveNote']").value
-            const userTopic = document.querySelector("input[name='faveTopic']").value
-            const userReader = document.querySelector("input[name='faveReader']").value
+//     mainContainer.addEventListener("click", clickEvent => {
+//         if (clickEvent.target.id === "submitRequest") {
+//             // Get what the user typed into the form fields
+//             const userWriter = document.querySelector("option[name='faveWriter']").value
+//             const userNote = document.querySelector("input[name='faveNote']").value
+//             const userTopic = document.querySelector("input[name='faveTopic']").value
+//             const userReader = document.querySelector("input[name='faveReader']").value
 
-            // Make an object out of the user input
-            const dataToSendToAPI = {
-                description: userWriter,
-                address: userNote,
-                budget: userTopic,
-                neededBy: userReader 
-            }
+//             // Make an object out of the user input
+//             const dataToSendToAPI = {
+//                 description: userWriter,
+//                 address: userNote,
+//                 budget: userTopic,
+//                 neededBy: userReader 
+//             }
 
-            // Send the data to the API for permanent storage
-            sendRequest(dataToSendToAPI)
+//             // Send the data to the API for permanent storage
+//             sendRequest(dataToSendToAPI)
+//         }
+//     })
+
+
+{/* <select class="authors" id="author">
+    <option value="">
+        Choose
+    </option>
+        ${
+            pals.map(
+                pal => {
+                    return `<option name="faveWriter" value="${pal.id}">${pal.name}</option>`
+                }
+            ).join("")
         }
-    })
+</select> */}
