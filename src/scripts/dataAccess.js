@@ -1,7 +1,8 @@
 const applicationState = {
     submissions: [],
     topics: [],
-    pals: []
+    pals: [],
+    bros: []
 }
 
 
@@ -19,6 +20,21 @@ export const fetchPals = () => {
             (servicePals) => {
                 // Store the external state in application stateß
                 applicationState.pals = servicePals
+            }
+        )
+}
+
+export const getBros = () => {
+    return applicationState.bros.map(bro => ({...bro}))
+}
+
+export const fetchBros = () => {
+    return fetch(`${API}/bros`)
+        .then(response => response.json())
+        .then(
+            (serviceBros) => {
+                // Store the external state in application stateß
+                applicationState.bros = serviceBros
             }
         )
 }
@@ -41,7 +57,37 @@ export const fetchTopics = () => {
 
 
 export const getSubmissions = () => {
-    return applicationState.submissions.map(request => ({...request}))
+    return applicationState.submissions.map(submission => ({...submission}))
+}
+
+export const fetchSubmissions = () => {
+    return fetch(`${API}/submissions`)
+        .then(response => response.json())
+        .then(
+            (serviceSubmissions) => {
+                // Store the external state in application stateß
+                applicationState.requests = serviceSubmissions
+            }
+        )
+}
+
+export const sendSubmissions = (userServiceSubmission) => {
+    const mainContainer = document.querySelector("#container")
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userServiceSubmission)
+    }
+
+
+    return fetch(`${API}/submissions`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+
 }
 
 

@@ -1,15 +1,5 @@
-import { Letter  } from "./letterForm.js"
-
-
-
-
-
-
-
-
-
-
-
+import { Letter } from "./letterForm.js"
+import { Submissions } from "./submission.js"
 
 export const PenPal = () => {
     return `
@@ -20,7 +10,7 @@ export const PenPal = () => {
 
         <section class="mSubmission">
             <h2>Submission</h2>
-            
+            ${Submissions()}
         </section>
     `
 }

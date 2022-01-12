@@ -1,9 +1,8 @@
-import { PenPal  } from "./PenPal.js"
-import { fetchPals  } from "./dataAccess.js"
-import { fetchTopics  } from "./dataAccess.js"
+import { PenPal } from "./PenPal.js"
+import { fetchPals, fetchTopics, fetchBros } from "./dataAccess.js"
 
 
-
+// fetchSumbissions
 
 const mainContainer = document.querySelector("#container")
 mainContainer.addEventListener(
@@ -16,20 +15,34 @@ mainContainer.addEventListener(
 
 
 const render = () => {
-    fetchPals().then(
+    fetchPals().then(fetchBros().then(fetchTopics().then(
         () => {
-            mainContainer.innerHTML = PenPal()
+            mainContainer.innerHTML = PenPal()  
         }
-    )
+    )))
 
-    fetchTopics().then(
-        () => {
-            mainContainer.innerHTML = PenPal()
-        }
-    )
 }
+    
 
 render()
 
 
 //add fetchletter
+
+
+
+// fetchPals().then(
+//     () => {
+//         mainContainer.innerHTML = PenPal()
+//     }
+// )
+// fetchTopics().then(
+//     () => {
+//         mainContainer.innerHTML = PenPal()
+//     }
+// )
+// fetchBros().then(
+//     () => {
+//         mainContainer.innerHTML = PenPal()
+//     }
+//

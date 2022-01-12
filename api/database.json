@@ -21,34 +21,55 @@
             "email": "ava.duVernay@pps.com"
         }
     ],
-    "topics": [
+    "bros": [
         {
             "id": 1,
-            "name": "business"
+            "name": "Tomi Adeyemi",
+            "email": "tomi.adeyemi@pps.com"
         },
         {
             "id": 2,
-            "name": "friendly"
+            "name": "Laureate Amanda Gorman",
+            "email": "laureate-amanda.gorman@pps.com"
         },
         {
             "id": 3,
-            "name": "family"
+            "name": "Issa Rae",
+            "email": "issa.rae@pps.com"
         },
         {
             "id": 4,
-            "name": "congratulations"
+            "name": "Ava DuVernay",
+            "email": "ava.duVernay@pps.com"
+        }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "name": "Business"
+        },
+        {
+            "id": 2,
+            "name": "Friendly"
+        },
+        {
+            "id": 3,
+            "name": "Family"
         },
         {
             "id": 4,
-            "name": "condolences"
+            "name": "Congratulations"
+        },
+        {
+            "id": 4,
+            "name": "Condolences"
         }
     ],
     "submissions": [{
         "id": 1,
-        "writter": "Ava DuVernay",
-        "reader": "Issa Rae",
-        "subject": "congragulations",
+        "palId": 4,
+        "brosId": 3,
+        "topicId": 4,
         "note": "Insecure's season finale was amazing!"
-      }
-    ]
+      }]
 }
