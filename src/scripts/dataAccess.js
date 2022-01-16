@@ -8,6 +8,15 @@ const applicationState = {
 
 const API = "http://localhost:8088"
 
+const mainContainer = document.querySelector("#container")
+
+mainContainer.addEventListener("click", click => {
+    if (click.target.id.startsWith("submission--")) {
+        const [,submissionId] = click.target.id.split("--")
+        deleteSubmission(parseInt(submissionId))
+    }
+})
+
 
 export const getPals = () => {
     return applicationState.pals.map(pal => ({...pal}))
@@ -66,7 +75,7 @@ export const fetchSubmissions = () => {
         .then(
             (serviceSubmissions) => {
                 // Store the external state in application stateß
-                applicationState.requests = serviceSubmissions
+                applicationState.submissions = serviceSubmissions
             }
         )
 }

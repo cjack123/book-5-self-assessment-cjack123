@@ -1,6 +1,5 @@
-import { getPals } from "./dataAccess.js"
-import { getBros } from "./dataAccess.js"
-import { getTopics } from "./dataAccess.js"
+import { getPals, getBros, getTopics, sendSubmissions } from "./dataAccess.js"
+
 
 
 
@@ -43,9 +42,9 @@ export const Letter= () => {
                 ${
                     topics.map(
                         topic => {
-                            return `<input name="faveTopic" key=${topic.id} type="radio">
+                            return `<input name="faveTopic" value=${topic.id} type="radio">
                             <label>${topic.name}</label>
-                        </input>`
+                        `
                         }
                     ).join("")
                 }
@@ -68,34 +67,34 @@ export const Letter= () => {
                         }
                 </select><br><br>
             </div>
-        <button class="button" id="submitLetter">Submit Letter</button>
+        <button class="button" id="submitSubmission">Submit Letter</button>
 
     ` 
 
     return html
 }
 
-// const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#container")
 
-//     mainContainer.addEventListener("click", clickEvent => {
-//         if (clickEvent.target.id === "submitSubmission") {
-//             // Get what the user typed into the form fields
-//             const userWriter = document.querySelector("option[name='faveWriter']").value
-//             const userNote = document.querySelector("input[name='faveNote']").value
-//             const userTopic = document.querySelector("input[name='faveTopic']").value
-//             const userReader = document.querySelector("input[name='faveReader']").value
+    mainContainer.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id === "submitSubmission") {
+            // Get what the user typed into the form fields
+            const userWriter = document.querySelector("select[id='author']").value
+            const userNote = document.querySelector("textarea[name='faveNote']").value
+            const userTopic = document.querySelector("input[name='faveTopic']:checked").value
+            const userReader = document.querySelector("select[id='recipient']").value
 
-//             // Make an object out of the user input
-//             const dataToSendToAPI = {
-//                 description: userWriter,
-//                 address: userNote,
-//                 budget: userTopic,
-//                 neededBy: userReader 
-//             }
+            // Make an object out of the user input
+            const dataToSendToAPI = {
+                authorId: +userWriter,
+                topicId: +userTopic,
+                message: userNote,
+                recipientId: +userReader 
+            }
 
-//             // Send the data to the API for permanent storage
-//             sendRequest(dataToSendToAPI)
-//         }
-//     })
+            // Send the data to the API for permanent storage
+            sendSubmissions(dataToSendToAPI)
+        }
+    })
 
 

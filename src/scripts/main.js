@@ -1,5 +1,5 @@
 import { PenPal } from "./PenPal.js"
-import { fetchPals, fetchTopics, fetchBros } from "./dataAccess.js"
+import { fetchPals, fetchTopics, fetchBros, fetchSubmissions } from "./dataAccess.js"
 
 
 // fetchSumbissions
@@ -15,11 +15,11 @@ mainContainer.addEventListener(
 
 
 const render = () => {
-    fetchPals().then(fetchBros().then(fetchTopics().then(
+    fetchPals().then(fetchBros().then(fetchTopics().then(fetchSubmissions().then(
         () => {
             mainContainer.innerHTML = PenPal()  
         }
-    )))
+    ))))
 
 }
     

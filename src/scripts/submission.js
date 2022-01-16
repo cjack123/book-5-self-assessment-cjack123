@@ -2,40 +2,67 @@
 import { getPals, getBros, getTopics, getSubmissions } from "./dataAccess.js"
 
 
-const pals = getPals
-const bros = getBros
-const topics = getTopics
-const submission = getSubmissions
+const pals = getPals()
+const bros = getBros()
+const topics = getTopics()
 
-const convertRequestToListElement = (Submission) => {
+const convertSubmissionToListElement = (message) => {
+    const selectAuthor = pals.find(
+        (pal) => {
+            return pal.id === message.palId
+        }
+    )
+
+    const authorEmail = pals.find(
+        (email) => {
+            return email.id === message.emailId
+        }
+    )
+
+    const selectTopic = topics.find(
+        (topic) => {
+            return topic.id === message.topicId
+        }
+    )
+
+    const selectRecipient = bros.find(
+        (bro) => {
+            return bro.id === message.broId
+        }
+    )
+
+    const recipientEmail = bros.find(
+        (bro) => {
+            return bro.id === message.broId
+        }
+    )
 
     return `
     <li>
-        <p>
-        ${pals.name}
-        ${pals.email}
-        ${topics.name}
-        ${submission.note}
-        ${bros.name}
-        ${bros.email}
-        </p>
+    ${
+        selectAuthor.map(
+            author => {
+                return `<p value="${author.id}">${author.name}</option>`
+            }
+        ).join("")
+    }
     </li>
     
 `
 }
-console.log(convertRequestToListElement)
+
 
 
 export const Submissions = () => {
     const submission = getSubmissions()
 
-    let html = `
-        <ul>
-            ${
-                submission.map(convertRequestToListElement)
-            }
-        </ul>
-    `
+    let html = "<ul>"
+
+    const note = submission.map(convertSubmissionToListElement)
+
+    html += note.join("")
+    html += "<ul>"
+
 
     return html
 }
@@ -70,7 +97,4 @@ export const Submissions = () => {
 //what is parseint?
 //how would i variable scope global? is global across files within the file?
 //what is --?
-
-
-
 
