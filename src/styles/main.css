@@ -1,1 +1,9 @@
 @import "details.css";
+
+body {
+    background-color: #333333
+}
+
+h1, h2, p, label {
+    color: #F0F8FF
+}

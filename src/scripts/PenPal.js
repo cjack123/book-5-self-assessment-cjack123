@@ -1,5 +1,17 @@
 import { Letter } from "./letterForm.js"
 import { Submissions } from "./submission.js"
+import { getSubmissions } from "./dataAccess.js"
+
+
+// document.addEventListener("click", (clickEvent) => {
+//     const itemClicked = clickEvent.target
+//         if(itemClicked.id.startsWith("submission")) {
+//             return getSubmissions()
+//         }
+
+//     }
+// )
+
 
 export const PenPal = () => {
     return `
@@ -14,3 +26,5 @@ export const PenPal = () => {
         </section>
     `
 }
+
+

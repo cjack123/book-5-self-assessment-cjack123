@@ -31,7 +31,7 @@ export const Letter= () => {
 
 
             <div class="field">
-            <h2>Letter</h2>
+            <h2>Message</h2>
                 <textarea id="" name="faveNote" rows="4" cols="50"
                  placeholder="Enter Message Here!" maxlength="200" size="200"></textarea>
             </div>
@@ -76,25 +76,28 @@ export const Letter= () => {
 
 const mainContainer = document.querySelector("#container")
 
-    mainContainer.addEventListener("click", clickEvent => {
-        if (clickEvent.target.id === "submitSubmission") {
-            // Get what the user typed into the form fields
-            const userWriter = document.querySelector("select[id='author']").value
-            const userNote = document.querySelector("textarea[name='faveNote']").value
-            const userTopic = document.querySelector("input[name='faveTopic']:checked").value
-            const userReader = document.querySelector("select[id='recipient']").value
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "submitSubmission") {
+        // Get what the user typed into the form fields
+        const userWriter = document.querySelector("select[id='author']").value
+        const userNote = document.querySelector("textarea[name='faveNote']").value
+        const userTopic = document.querySelector("input[name='faveTopic']:checked").value
+        const userReader = document.querySelector("select[id='recipient']").value
 
-            // Make an object out of the user input
-            const dataToSendToAPI = {
-                authorId: +userWriter,
-                topicId: +userTopic,
-                message: userNote,
-                recipientId: +userReader 
-            }
-
-            // Send the data to the API for permanent storage
-            sendSubmissions(dataToSendToAPI)
+        // Make an object out of the user input
+        const dataToSendToAPI = {
+            authorId: +userWriter,
+            topicId: +userTopic,
+            message: userNote,
+            recipientId: +userReader 
         }
-    })
+
+        // Send the data to the API for permanent storage
+        sendSubmissions(dataToSendToAPI)
+    }
+})
+
+
+
 
 

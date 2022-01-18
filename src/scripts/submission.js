@@ -2,66 +2,64 @@
 import { getPals, getBros, getTopics, getSubmissions } from "./dataAccess.js"
 
 
-const pals = getPals()
-const bros = getBros()
-const topics = getTopics()
 
-const convertSubmissionToListElement = (message) => {
-    const selectAuthor = pals.find(
+
+
+export const convertSubmissionToListElement = (submission) => {
+    const pals = getPals()
+    const bros = getBros()
+    const topics = getTopics()
+
+    const author = pals.find(
         (pal) => {
-            return pal.id === message.palId
+            return pal.id === submission.authorId
         }
     )
 
-    const authorEmail = pals.find(
-        (email) => {
-            return email.id === message.emailId
+    const recipient = bros.find(
+        (bro) => {
+            return bro.id === submission.authorId
         }
     )
 
-    const selectTopic = topics.find(
+    const subject = topics.find(
         (topic) => {
-            return topic.id === message.topicId
+            return topic.id === submission.topicId
         }
     )
 
-    const selectRecipient = bros.find(
-        (bro) => {
-            return bro.id === message.broId
-        }
-    )
+    var today = new Date();
+    var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
 
-    const recipientEmail = bros.find(
-        (bro) => {
-            return bro.id === message.broId
-        }
-    )
 
-    return `
-    <li>
-    ${
-        selectAuthor.map(
-            author => {
-                return `<p value="${author.id}">${author.name}</option>`
-            }
-        ).join("")
-    }
-    </li>
-    
+return `<p>From: ${author.name}, (${author.email})</p> 
+<p>To: ${recipient.name} (${recipient.email})</p>
+<p>${subject.name}</p>
+<p>${submission.message}</p>
+<p>${date}</p>
+<br><br>
 `
+// console.log(author.email) 
+// console.log(subject)   
+// return html
+
+
 }
 
 
 
+{/* <p>Dear ${foundAuthor.name} (${foundAuthor.email}),</p> */}
+
 export const Submissions = () => {
-    const submission = getSubmissions()
+    const submissions = getSubmissions()
 
     let html = "<ul>"
 
-    const note = submission.map(convertSubmissionToListElement)
+    const listItems = submissions.map(convertSubmissionToListElement)
+    html += listItems.join("")
 
-    html += note.join("")
-    html += "<ul>"
+    html += "</ul>"
+
 
 
     return html
@@ -70,22 +68,19 @@ export const Submissions = () => {
 
 
 
+//             pals.find(
+//                 pal => { 
+//                     return `<p value=${pals.id}>${pals.name}</pal>`
+                    
+                    
+//                 }
+//             )
+//         }
+//     </section>
+   
+// `
 
-//what do i want to do?
-//i want to send my infomation to my api
-//i want to render my submissions on the hmtl
-//then css i guess
-
-//how do i do it?
-//i will need to use the post method 
-//i need functions on the submission page (and maybe other pages)
-//i need event listener to listen for the clicks on the page (where? idk)
-
-//where should i start?
-//on the submissions page. it may be easier to work on the front end 
-//then send the correct information then having to clear up then database with errors
-
-//
+// return html
 
 
 
@@ -94,7 +89,44 @@ export const Submissions = () => {
 
 
 
-//what is parseint?
-//how would i variable scope global? is global across files within the file?
-//what is --?
 
+
+// what is parseint?
+// how would i variable scope global? is global across files within the file?
+// what is --?
+
+    // const authorEmail = pals.find(
+    //     (email) => {
+    //         return email.id === message.emailId
+    //     }
+    // )
+
+    // const selectTopic = topics.find(
+    //     (topic) => {
+    //         return topic.id === message.topicId
+    //     }
+    // )
+
+    // const selectRecipient = bros.find(
+    //     (bro) => {
+    //         return bro.id === message.broId
+    //     }
+    // )
+
+    // const recipientEmail = bros.find(
+    //     (bro) => {
+    //         return bro.id === message.broId
+    //     }
+    // )
+
+
+    // return `
+    // <li>
+    // ${
+    //     selectAuthor.map(
+    //         author => {
+    //             return `<p value="${author.id}">${author.name}</option>`
+    //         }
+    //     ).join("")
+    // }
+    // </li> `
