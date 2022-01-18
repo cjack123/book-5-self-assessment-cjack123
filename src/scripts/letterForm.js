@@ -27,15 +27,21 @@ export const Letter= () => {
                 </select>
             </div>
 
-
-
-
             <div class="field">
-            <h2>Message</h2>
-                <textarea id="" name="faveNote" rows="4" cols="50"
-                 placeholder="Enter Message Here!" maxlength="200" size="200"></textarea>
+            <h2>Recipient</h2>
+                <select class="recipients" id="recipient">
+                    <option value="">
+                        Choose
+                    </option>
+                        ${
+                            bros.map(
+                                bro => {
+                                    return `<option name="faveReader" value="${bro.id}">${bro.name}</option>`
+                                }
+                            ).join("")
+                        }
+                </select>
             </div>
-
 
             <div class="field">
             <h2>Topics</h2>
@@ -51,23 +57,14 @@ export const Letter= () => {
             </div>
 
 
-
             <div class="field">
-            <h2>Recipient</h2>
-                <select class="recipients" id="recipient">
-                    <option value="">
-                        Choose
-                    </option>
-                        ${
-                            bros.map(
-                                bro => {
-                                    return `<option name="faveReader" value="${bro.id}">${bro.name}</option>`
-                                }
-                            ).join("")
-                        }
-                </select><br><br>
-            </div>
-        <button class="button" id="submitSubmission">Submit Letter</button>
+            <h2>Message</h2>
+                <textarea id="" name="faveNote" rows="10" cols="100"
+                 placeholder="Enter Message Here!" maxlength="200" size="200"></textarea>
+            </div><br><br>
+
+            <button class="button" id="submitSubmission">Submit Letter</button>
+        </div>
 
     ` 
 

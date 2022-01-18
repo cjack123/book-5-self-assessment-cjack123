@@ -1,9 +1,81 @@
 @import "details.css";
 
 body {
-    background-color: #333333
+    background-color: #8f5656
 }
 
-h1, h2, p, label {
-    color: #F0F8FF
+
+h1, h2 {
+    color: #FFE4E1;
+    font-family: cursive;
+
+}
+
+.messageForm {
+    display: flex;
+    justify-content: center
+}
+
+h1 {
+    text-align: center;
+    font-size: 40pt;
+}
+
+h2 {
+    font-size: 25pt;
+}
+
+label {
+    color: #FFFFF0
+}
+
+
+p {
+    margin-left: 5%;
+    color: #800000;
+}
+
+
+textarea {
+    background-color: #F8F8FF;
+}
+
+
+.button {
+    margin: 1rem 0 2rem 2rem;
+    padding: 0.5rem;
+    background-color: #8B0000;
+    color: lightgoldenrodyellow;
+    font-size: 1rem
+} 
+
+.all{
+    display: flex;
+    justify-content: center
+}
+
+.message {
+    border: 3px solid;
+    border-color: black; 
+    margin-bottom: 2%;
+    width: 60%; 
+    background-color: #BC8F8F;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.subject {
+    display: flex;
+
+} 
+
+.header, .subject, .body {
+    font-size: 13pt;
+}
+
+#move {
+    display: flex;
+    justify-content: center;
+    font-size: 40pt;
 }

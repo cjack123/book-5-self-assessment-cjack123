@@ -20,8 +20,8 @@ export const PenPal = () => {
             ${Letter()}
             </section>
 
-        <section class="mSubmission">
-            <h2>Submission</h2>
+        <section class="submit">
+            <h2 id="move">Submission</h2>
             ${Submissions()}
         </section>
     `

@@ -18,7 +18,7 @@ export const convertSubmissionToListElement = (submission) => {
 
     const recipient = bros.find(
         (bro) => {
-            return bro.id === submission.authorId
+            return bro.id === submission.recipientId
         }
     )
 
@@ -32,11 +32,25 @@ export const convertSubmissionToListElement = (submission) => {
     var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
 
 
-return `<p>From: ${author.name}, (${author.email})</p> 
-<p>To: ${recipient.name} (${recipient.email})</p>
-<p>${subject.name}</p>
-<p>${submission.message}</p>
-<p>${date}</p>
+return `
+<section class="all">
+<section class="message">
+    <div class="date">
+        <p>${date}</p>
+    </div>    
+    <div class="header">
+        <p>From: ${author.name} (${author.email})</p> 
+        <p>To: ${recipient.name} (${recipient.email})</p>
+    </div>
+    <div class="subject">
+        <p>${subject.name}</p>
+    </div>
+    <br><br>
+    <div class="body">
+        <p>${submission.message}</p>
+    </div>
+</section>
+</section>
 <br><br>
 `
 // console.log(author.email) 
