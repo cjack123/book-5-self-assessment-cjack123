@@ -12,7 +12,7 @@ export const Letter= () => {
     let html = `
         <div class="fields">
             <div class="field">
-                <h2>Author</h2>
+                <h3>Author</h3>
                 <select class="authors" id="author">
                     <option value="">
                         Choose
@@ -24,11 +24,10 @@ export const Letter= () => {
                                 }
                             ).join("")
                         }
-                </select>
-            </div>
-
+                    </select>
+                </div>
             <div class="field">
-            <h2>Recipient</h2>
+            <h3>Recipient</h3>
                 <select class="recipients" id="recipient">
                     <option value="">
                         Choose
@@ -40,11 +39,10 @@ export const Letter= () => {
                                 }
                             ).join("")
                         }
-                </select>
-            </div>
-
+                    </select>
+                </div>
             <div class="field">
-            <h2>Topics</h2>
+            <h3>Topics</h3>
                 ${
                     topics.map(
                         topic => {
@@ -54,16 +52,15 @@ export const Letter= () => {
                         }
                     ).join("")
                 }
-            </div>
-
-
+                </div>
             <div class="field">
-            <h2>Message</h2>
-                <textarea id="" name="faveNote" rows="10" cols="100"
-                 placeholder="Enter Message Here!" maxlength="200" size="200"></textarea>
-            </div><br><br>
-
-            <button class="button" id="submitSubmission">Submit Letter</button>
+            <h3>Message</h3>
+                <textarea name="faveNote" rows="10" cols="130"
+                    placeholder="Enter Message Here!" maxlength="500" size="220"></textarea>
+                    </div><br><br>
+            <div id="hi">
+                <button class="button-56" id="submitSubmission">Submit Letter</button>
+                </div>
         </div>
 
     ` 

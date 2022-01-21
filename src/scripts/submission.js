@@ -33,31 +33,27 @@ export const convertSubmissionToListElement = (submission) => {
 
 
 return `
-<section class="all">
-<section class="message">
-    <div class="date">
-        <p>${date}</p>
-    </div>    
-    <div class="header">
-        <p>From: ${author.name} (${author.email})</p> 
-        <p>To: ${recipient.name} (${recipient.email})</p>
-    </div>
-    <div class="subject">
-        <p>${subject.name}</p>
-    </div>
-    <br><br>
-    <div class="body">
-        <p>${submission.message}</p>
-    </div>
+<main id="how">
+<section id="help" class="all">
+    <section class="message"> 
+        <div class="header">
+            <p>Dear ${recipient.name} (${recipient.email}), </p>
+            </div>
+        <div class="body">
+            <p>${submission.message}</p>
+            </div>   
+        <div class="closing">
+            <p>Sincerly, ${author.name} (${author.email})</p>
+            <p id="date">Sent on ${date}</p>
+            </div><br><br>
+        <div class="subject">
+        <p class="flex">${subject.name}</p>
+            </div> 
+    </section>
 </section>
+</main>
 </section>
-<br><br>
 `
-// console.log(author.email) 
-// console.log(subject)   
-// return html
-
-
 }
 
 

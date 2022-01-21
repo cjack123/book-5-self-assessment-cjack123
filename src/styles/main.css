@@ -5,10 +5,10 @@ body {
 }
 
 
-h1, h2 {
+h1, h2, h3 {
     color: #FFE4E1;
     font-family: cursive;
-
+    margin-bottom: 1%;
 }
 
 .messageForm {
@@ -18,11 +18,18 @@ h1, h2 {
 
 h1 {
     text-align: center;
-    font-size: 40pt;
+    font-size: 60pt;
+    margin-top: 1%;
 }
 
 h2 {
-    font-size: 25pt;
+    font-size: 50pt;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 30pt;
 }
 
 label {
@@ -33,12 +40,17 @@ label {
 p {
     margin-left: 5%;
     color: #800000;
+    font-size: 15pt;
 }
+
 
 
 textarea {
     background-color: #F8F8FF;
+    border: 2px solid;
+    border-color: black;
 }
+
 
 
 .button {
@@ -51,8 +63,10 @@ textarea {
 
 .all{
     display: flex;
-    justify-content: center
+    justify-content: center;
+    
 }
+
 
 .message {
     border: 3px solid;
@@ -60,22 +74,19 @@ textarea {
     margin-bottom: 2%;
     width: 60%; 
     background-color: #BC8F8F;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+
 }
 
-.subject {
-    display: flex;
-
-} 
 
 .header, .subject, .body {
     font-size: 13pt;
 }
 
-#move {
-    display: flex;
-    justify-content: center;
-    font-size: 40pt;
+#author, #recipient {
+    width: 30%;
+    height: 50%
+}
+
+.label {
+    font-size: 10pt
 }
