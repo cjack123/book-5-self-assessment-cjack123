@@ -5,15 +5,14 @@ body {
 }
 
 
+
+/* This is letterForm content. */
+
 h1, h2, h3 {
     color: #FFE4E1;
     font-family: cursive;
     margin-bottom: 1%;
-}
 
-.messageForm {
-    display: flex;
-    justify-content: center
 }
 
 h1 {
@@ -32,17 +31,11 @@ h3 {
     font-size: 30pt;
 }
 
+
 label {
-    color: #FFFFF0
+    color: #FFFFF0;
+
 }
-
-
-p {
-    margin-left: 5%;
-    color: #800000;
-    font-size: 15pt;
-}
-
 
 
 textarea {
@@ -51,15 +44,52 @@ textarea {
     border-color: black;
 }
 
+.messageForm {
+    display: flex;
+    justify-content: center
+}
+
+#heads{
+    display: flex;
+    justify-content: space-between;
+}
+
+#author, #recipient {
+    width: 100%;
+}
+
+#middle{
+    display:flex;
+    justify-content: center;
+}
+
+#cent{
+    display: flex;
+    justify-content: center;
+}
+
+#hi{
+    display: flex;
+    justify-content: flex-end;
+}
 
 
-.button {
-    margin: 1rem 0 2rem 2rem;
-    padding: 0.5rem;
-    background-color: #8B0000;
-    color: lightgoldenrodyellow;
-    font-size: 1rem
-} 
+/* This is submission content. */
+
+h6{
+    font-family: Inter,sans-serif;
+    font-size: 13px;
+}
+
+p {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: black;
+    font-size: 15pt;
+    /*color: #800000; */
+}
+
+
 
 .all{
     display: flex;
@@ -69,7 +99,7 @@ textarea {
 
 
 .message {
-    border: 3px solid;
+    border: 2px solid;
     border-color: black; 
     margin-bottom: 2%;
     width: 60%; 
@@ -82,11 +112,10 @@ textarea {
     font-size: 13pt;
 }
 
-#author, #recipient {
-    width: 30%;
-    height: 50%
+
+#date{
+    display: flex;
+    justify-content: flex-end;
 }
 
-.label {
-    font-size: 10pt
-}
+

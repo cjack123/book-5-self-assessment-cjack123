@@ -3,8 +3,6 @@ import { getPals, getBros, getTopics, getSubmissions } from "./dataAccess.js"
 
 
 
-
-
 export const convertSubmissionToListElement = (submission) => {
     const pals = getPals()
     const bros = getBros()
@@ -32,33 +30,31 @@ export const convertSubmissionToListElement = (submission) => {
     var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
 
 
-return `
-<main id="how">
-<section id="help" class="all">
-    <section class="message"> 
-        <div class="header">
-            <p>Dear ${recipient.name} (${recipient.email}), </p>
-            </div>
-        <div class="body">
-            <p>${submission.message}</p>
-            </div>   
-        <div class="closing">
-            <p>Sincerly, ${author.name} (${author.email})</p>
-            <p id="date">Sent on ${date}</p>
-            </div><br><br>
-        <div class="subject">
-        <p class="flex">${subject.name}</p>
-            </div> 
+    return `
+    <section id="help" class="all">
+        <section class="message"> 
+            <div class="header">
+                <p>Dear ${recipient.name} (${recipient.email}), </p>
+                </div>
+            <div class="body">
+                <p>${submission.message}</p>
+                </div>   
+            <div class="closing">
+                <p>Sincerly,</p> 
+                <p>${author.name} (${author.email})</p>
+                </div>
+            <div id=date>
+                <p id="date">Sent on ${date}</p>
+                </div>
+            <div class="subject">
+            <h6 class="flex">${subject.name}</h6>
+                </div> 
+        </section>
     </section>
-</section>
-</main>
-</section>
+
 `
 }
 
-
-
-{/* <p>Dear ${foundAuthor.name} (${foundAuthor.email}),</p> */}
 
 export const Submissions = () => {
     const submissions = getSubmissions()
@@ -74,69 +70,3 @@ export const Submissions = () => {
 
     return html
 }
-
-
-
-
-//             pals.find(
-//                 pal => { 
-//                     return `<p value=${pals.id}>${pals.name}</pal>`
-                    
-                    
-//                 }
-//             )
-//         }
-//     </section>
-   
-// `
-
-// return html
-
-
-
-
-
-
-
-
-
-
-// what is parseint?
-// how would i variable scope global? is global across files within the file?
-// what is --?
-
-    // const authorEmail = pals.find(
-    //     (email) => {
-    //         return email.id === message.emailId
-    //     }
-    // )
-
-    // const selectTopic = topics.find(
-    //     (topic) => {
-    //         return topic.id === message.topicId
-    //     }
-    // )
-
-    // const selectRecipient = bros.find(
-    //     (bro) => {
-    //         return bro.id === message.broId
-    //     }
-    // )
-
-    // const recipientEmail = bros.find(
-    //     (bro) => {
-    //         return bro.id === message.broId
-    //     }
-    // )
-
-
-    // return `
-    // <li>
-    // ${
-    //     selectAuthor.map(
-    //         author => {
-    //             return `<p value="${author.id}">${author.name}</option>`
-    //         }
-    //     ).join("")
-    // }
-    // </li> `
